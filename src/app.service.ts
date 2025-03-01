@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ParkingRepository } from './repositories/parking-repository';
-import { CarDto } from './dtos/car';
+import { CreateCarDto } from './dtos/createCar';
 
 @Injectable()
 export class AppService {
@@ -9,9 +9,12 @@ export class AppService {
     return 'Hello World!';
   }
 
-  create(createCar: CarDto) {
+  create(createCar: CreateCarDto) {
     this.repository.create(createCar.licensePlate);
-
     return 'Car added successfully';
+  }
+
+  get(licensePlate: string) {
+    return this.repository.get(licensePlate);
   }
 }

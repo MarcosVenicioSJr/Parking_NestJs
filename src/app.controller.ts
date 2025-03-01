@@ -1,18 +1,18 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { AppService } from './app.service';
-import { CarDto } from './dtos/car';
+import { CreateCarDto } from './dtos/createCar';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post()
+  createCar(@Body() createCar: CreateCarDto): string {
+    return this.appService.create(createCar);
   }
 
-  @Post()
-  createCar(@Body() createCar: CarDto): string {
-    return this.appService.create(createCar);
+  @Get(':licensePlate')
+  get(@Param('licensePlate') licensePlate: string) {
+    return this.appService.get(licensePlate);
   }
 }
