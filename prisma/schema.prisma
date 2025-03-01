@@ -10,6 +10,6 @@ generator client {
 model Car {
   id           Int      @id @default(autoincrement())
   licensePlate String   @unique
-  createdAt    DateTime
+  createdAt    DateTime @default(now())
   pageValue    Decimal?
 }
