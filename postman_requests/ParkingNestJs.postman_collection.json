@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "c7bf57b3-98f9-4aa0-b19d-e67726cfdf02",
+		"name": "ParkingNestJs",
+		"description": "COLLECTION_PARKING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20851665"
+	},
+	"item": [
+		{
+			"name": "AddCar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"licensePlate\": \"OHX-9383\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				},
+				"description": "Use request to add car's in parking"
+			},
+			"response": []
+		},
+		{
+			"name": "GetCar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"licensePlate\": \"OHX-9383\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				},
+				"description": "Use request to pick informations at car"
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveCar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"licensePlate\": \"OHX-9383\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/RemoveCar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"RemoveCar"
+					]
+				},
+				"description": "Use request to remove car and calculate value."
+			},
+			"response": []
+		}
+	]
+}
