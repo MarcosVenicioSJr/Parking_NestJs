@@ -15,4 +15,9 @@ export class AppController {
   get(@Param('licensePlate') licensePlate: string) {
     return this.appService.get(licensePlate);
   }
+
+  @Post('/RemoveCar')
+  removeCar(@Body() body: { licensePlate: string }) {
+    return this.appService.removeCar(body.licensePlate);
+  }
 }
